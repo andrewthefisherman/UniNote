@@ -33,7 +33,7 @@ for page_num in range(pdf_document.page_count):
     pix.save(output_filename)  # Save image to temp folder
     pdf_images.append(output_filename)  # Add image file path to list
 
-genai.configure(api_key='AIzaSyAfNPbUKOCWG8u2FgCS3YOsVXxJf2ccpAA')
+genai.configure(api_key='YOUR_API_KEY')
 
 prompt = 'Analizza l\'immagine e trascrivi esclusivamente il testo contenuto all\'interno di un riquadro contrassegnato da una stella. Se non è presente nessun testo con queste caratteristiche, restituisci solo la parola \"null\". Non trascrivere nessun altro testo presente nell\'immagine, anche se riconosciuto.Converti eventuali notazioni matematiche in LaTeX.'
 
