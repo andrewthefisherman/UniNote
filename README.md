@@ -1,5 +1,6 @@
 # UniNote 📝➡️🧠
 **Status:** ⚠️ Proof of Concept / Inactive
+
 **Core Technologies:** Python, Notion API, Google Gemini (Vision), Cohere (NLP), PyMuPDF, Regex.
 
 ## The Vision
