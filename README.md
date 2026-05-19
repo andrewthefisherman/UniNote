@@ -4,15 +4,15 @@
 **Core Technologies:** Python, Notion API, Google Gemini (Vision), Cohere (NLP), PyMuPDF, Regex.
 
 ## The Vision
-UniNote is an experimental pipeline designed to bridge the gap between analog note-taking and structured digital databases. The goal was to eliminate the friction of manually digitizing handwritten mathematical notes and organizing them into Notion.
+UniNote is an experimental pipeline designed to bridge the gap between analog note-taking and structured digital databases. The goal was to eliminate the friction of manually digitizing handwritten mathematical notes and organizing them into Notion, a popular notetaking software.
 
-The core innovation of this project is "Meta-Handwriting". By writing specific commands, symbols, or pseudo-tags directly on a physical notebook or an iPad, the system was designed to parse the handwriting and execute complex Notion commands. For example, writing `wiki(Weierstrass)` or `<date> tomorrow </date>` by hand would automatically generate linked database properties, fetch Wikipedia references, and create rich text blocks in Notion.
+The core innovation of this project is "Meta-Handwriting". By writing specific commands, symbols, or pseudo-tags directly on a physical notebook or an iPad, the system was designed to parse the handwriting and execute complex Notion commands. For example, writing `wiki(Weierstrass)` or other so-called 'commands' by hand would automatically generate page properties, fetch Wikipedia references, interlink database pages, and create rich text blocks in Notion.
 
 ## Why it is inactive
 The project was put on hold due to the current limitations of free-tier Vision AI models (such as Gemini 1.5 Pro). While the Python backend and the Notion API integration work flawlessly, the OCR pipeline struggled to consistently and accurately recognize custom meta-syntax when mixed with complex, handwritten mathematical notation (LaTeX). The bottleneck was the AI's transcription accuracy, not the system's logic.
 
 ## How It Works (Architecture)
-Despite the OCR limitations, the backend architecture is fully developed and consists of several robust modules:
+In the latest versions, the UniNote project was built to be as modular as possible: every processing operation was turned into classes and methods and the execution was beginning to be reshaped as webhook commands coming from the user itself. Despite the OCR limitations, the backend architecture (Notion-Processor) is fully developed and consists of several robust modules:
 
 ### 1. Vision & PDF Processing (exrecv4.py)
 * **Color-Coded Extraction:** Uses PyMuPDF and numpy to scan PDF notes and isolate specific strokes based on color (e.g., extracting only the text written in a specific green or blue pen).
